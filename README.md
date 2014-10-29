@@ -1,17 +1,37 @@
 Public
 ======
+    <style name="tab_bottom">
+        <item name="android:textSize">@dimen/bottom_tab_font_size</item>
+        <item name="android:textColor">@drawable/tab_text_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/tabs_btn_bg</item>
+        <item name="android:paddingTop">5.0dip</item>
+        <item name="android:paddingBottom">5.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:button">@null</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+<?xml version="1.0" encoding="utf-8"?>
+<selector
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/menu_bar_parent" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <LinearLayout android:id="@id/main_tabs_radio" android:background="@drawable/foot_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
-            <RadioGroup android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/tabs_radio" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
-                <RadioButton android:gravity="center" android:id="@id/radio_button1" android:text="@string/tab_search_medicine" android:drawableTop="@drawable/tab1_radiobtn" style="@style/tab_bottom" />
-                <RadioButton android:gravity="center" android:id="@id/radio_button2" android:text="@string/tab_category" android:drawableTop="@drawable/tab2_radiobtn" style="@style/tab_bottom" />
-                <RadioButton android:gravity="center" android:id="@id/radio_button3" android:text="@string/tab_symptom" android:drawableTop="@drawable/tab3_radiobtn" style="@style/tab_bottom" />
-                <RadioButton android:gravity="center" android:id="@id/radio_button4" android:text="@string/tab_guidecatelist" android:drawableTop="@drawable/tab4_radiobtn" style="@style/tab_bottom" />
-            </RadioGroup>
-            <TextView android:textColor="@color/more_line" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/radio_button5" android:background="@null" android:text="@string/tab_more" android:drawableTop="@drawable/tab5_radiobtn" android:layout_weight="4.0" style="@style/tab_bottom" />
-        </LinearLayout>
-        <FrameLayout android:id="@id/tabcontent" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/main_tabs_radio" />
-    </RelativeLayout>
-    <include android:layout_gravity="start" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/main_menu" />
-</android.support.v4.widget.DrawerLayout>
+    <item android:state_enabled="true" android:state_checked="true" android:color="@color/read_text" />
+    <item android:state_selected="true" android:color="@color/read_text" />
+    <item android:color="@color/news_title" />
+</selector>
+
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:drawable="@drawable/foot_bar_line" />
+    <item android:state_pressed="true" android:drawable="@drawable/foot_bar_line" />
+    <item android:state_checked="true" android:drawable="@drawable/foot_bar_line" />
+    <item android:drawable="@drawable/none" />
+</selector>
+
+<color name="read_text">#ffe66767</color>
+<color name="news_title">#ff666666</color>
+
+<dimen name="bottom_tab_font_size">11.0sp</dimen>
